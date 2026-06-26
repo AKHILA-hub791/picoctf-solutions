@@ -1,14 +1,24 @@
 Markdown
 # CyLab Security Academy: Log Hunt Challenge
 
-A write-up and solution for the **Log Hunt** (Easy, 50 pts) forensic/general skills challenge on CyLab Security Academy.
+A write-up and solution for the **Log Hunt** forensic/general skills challenge on CyLab Security Academy.
 
-## Challenge Description
+---
+
+## Challenge Details
+
+| Category | Difficulty | Points | Source |
+| :--- | :--- | :--- | :--- |
+| General Skills | Easy | 50 pts | CyLab Security Academy |
+
+### Challenge Description
 > "Our server seems to be leaking pieces of a secret flag in its logs. The parts are scattered and sometimes repeated. Can you reconstruct the original flag?"
 
 **Hints provided:**
 1. You can use `grep` to filter only matching lines from the log.
 2. Some lines are duplicates; ignore extra occurrences.
+
+---
 
 ## Solution Walkthrough
 
@@ -18,8 +28,7 @@ The challenge provides a standard log file (`server.log`). To isolate the flag e
 First, open your terminal and change directories to where the file was downloaded (e.g., the `Downloads` directory):
 ```bash
 cd ~/Downloads
-
-### Step 2: Extract and De-duplicate the Flag Fragments
+Step 2: Extract and De-duplicate the Flag Fragments
 Run the following pipeline to search for the keyword, sort the results, and remove all duplicate noise:
 
 Bash
@@ -31,7 +40,7 @@ sort: Alphabetically sorts the matching log lines (a required prerequisite for t
 
 uniq: Discards consecutive duplicate lines, leaving only unique instances of the flag pieces.
 
-### Step 3: Analyze the Output
+Step 3: Analyze the Output
 Running the pipeline yields the following clean output tracking the flag segments chronologically:
 
 Plaintext
