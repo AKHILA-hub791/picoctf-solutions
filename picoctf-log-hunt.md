@@ -18,7 +18,8 @@ The challenge provides a standard log file (`server.log`). To isolate the flag e
 First, open your terminal and change directories to where the file was downloaded (e.g., the `Downloads` directory):
 ```bash
 cd ~/Downloads
-Step 2: Extract and De-duplicate the Flag Fragments
+
+### Step 2: Extract and De-duplicate the Flag Fragments
 Run the following pipeline to search for the keyword, sort the results, and remove all duplicate noise:
 
 Bash
@@ -30,7 +31,7 @@ sort: Alphabetically sorts the matching log lines (a required prerequisite for t
 
 uniq: Discards consecutive duplicate lines, leaving only unique instances of the flag pieces.
 
-Step 3: Analyze the Output
+### Step 3: Analyze the Output
 Running the pipeline yields the following clean output tracking the flag segments chronologically:
 
 Plaintext
